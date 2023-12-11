@@ -7,4 +7,3 @@ class student(models.Model):
     address = models.TextField()
     father_name = models.TextField(default="janina")
     
-    
