@@ -6,7 +6,7 @@ def home(request):
     return render(request,'home.html', {'data': students})
 
 def delete_student(request, age):
-    item = models.student.objects.get(pk == age)
-    print(item).delete()
+    item = models.student.objects.get(pk = age).delete()
+    # print(item)
     return redirect("home")
     
