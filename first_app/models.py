@@ -7,3 +7,5 @@ class student(models.Model):
     address = models.TextField()
     father_name = models.TextField(default="janina")
     
+    def __str__(self):
+        return f"Name: {self.name}- {self.age} - {self.father_name}"
