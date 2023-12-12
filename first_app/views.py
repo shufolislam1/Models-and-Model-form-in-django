@@ -1,5 +1,12 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from . import models
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    students = models.student.objects.all()
+    return render(request,'home.html', {'data': students})
+
+def delete_student(request, age):
+    item = models.student.objects.get(pk == age)
+    print(item).delete()
+    return redirect("home")
+    
